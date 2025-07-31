@@ -1,0 +1,167 @@
+Here’s a full project specification in the style of your CS32 TaskList spec — but for implementing a Vector Class from Scratch to learn operator overloading, templates, and move semantics.
+
+⸻
+
+CS 32 Project: Building a Custom Vector Container
+
+Due Date: Flexible – Self-paced project
+Page: 1 of 4
+
+⸻
+
+Overview
+
+In this project, you will implement a dynamic array class Vector<T> from scratch, mimicking the behavior of std::vector. This will give you hands-on experience with class templates, operator overloading, dynamic memory management, and move semantics in C++.
+
+You will implement dynamic resizing, support element access via the [] operator, implement copy and move constructors and assignment operators, and ensure safe memory handling using the Rule of Five.
+
+⸻
+
+Learning Objectives
+	•	Implement a C++ class template from an abstract specification
+	•	Design and manage a dynamically allocated resizable array
+	•	Apply the Rule of Five for memory-safe resource management
+	•	Implement operator overloading ([], =, ==, !=)
+	•	Practice move semantics for efficient object transfer
+	•	Write clean, modular, and testable C++ code
+
+⸻
+
+Real-World Use Cases
+
+🧠 Use Case 1: Fast Resizing Array
+
+Build a generic resizable array for game objects, coordinates, or buffers in performance-sensitive programs.
+
+📦 Use Case 2: Container for Any Type
+
+You’ll design a class that can store any type — integers, strings, user-defined structs, etc.
+
+🧪 Use Case 3: Efficient Test Runner
+
+Store test case results, dynamically push results or messages, and use [] or iteration to access.
+
+⸻
+
+What You’re Building
+	•	A Vector<T> class template (in Vector.h and Vector.cpp)
+	•	A test driver in main.cpp
+	•	A writeup in report.txt
+
+All memory must be managed manually using new and delete. You may not use std::vector, std::array, or other STL containers internally.
+
+⸻
+
+Required Functionality
+
+You must implement the following public interface exactly as shown:
+
+template <typename T>
+class Vector {
+public:
+    Vector();                                     // Default constructor
+    Vector(size_t initialCapacity);              // Optional: constructor with capacity
+    ~Vector();                                    // Destructor
+
+    Vector(const Vector<T>& other);              // Copy constructor
+    Vector(Vector<T>&& other) noexcept;          // Move constructor
+
+    Vector<T>& operator=(const Vector<T>& other); // Copy assignment
+    Vector<T>& operator=(Vector<T>&& other) noexcept; // Move assignment
+
+    void push_back(const T& value);              // Add item to end
+    void pop_back();                             // Remove last item
+    T& operator[](size_t index);                 // Access element
+    const T& operator[](size_t index) const;
+
+    size_t size() const;                         // Current number of elements
+    size_t capacity() const;                     // Allocated capacity
+    bool empty() const;                          // Is vector empty?
+
+    void clear();                                // Remove all elements
+
+    bool operator==(const Vector<T>& rhs) const; // Equality
+    bool operator!=(const Vector<T>& rhs) const;
+
+private:
+    T* data;
+    size_t sz;
+    size_t cap;
+
+    void resize(); // doubles the capacity
+    void destroy(); // deletes all data
+    void copyFrom(const Vector<T>& other);
+};
+
+
+⸻
+
+Constraints & Rules
+
+You may not use:
+	•	Any STL container (e.g., std::vector, std::array, std::list)
+	•	Global variables (constants are fine)
+	•	friend or pragma
+	•	External libraries
+
+You must:
+	•	Use new and delete safely
+	•	Follow Rule of Five
+	•	Use only raw pointers inside the implementation
+
+⸻
+
+Starter Files
+
+You should structure your code as:
+	•	Vector.h — class declaration
+	•	Vector.cpp — template method definitions
+	•	main.cpp — test driver (test all functionality + edge cases)
+	•	report.txt — explanation, pseudocode, and test plan
+
+⸻
+
+What to Submit
+
+You must submit a .zip file containing:
+	•	Vector.h, Vector.cpp, main.cpp, and report.txt
+
+📄 report.txt should include:
+	•	Your class design and pointer logic
+	•	Pseudocode for each major method
+	•	Description of how Rule of Five is implemented
+	•	Test strategy and edge cases handled
+
+⸻
+
+Evaluation Criteria
+
+Component	Points
+Correct class design (template syntax, constructor setup)	10 pts
+Dynamic memory management (new/delete, no leaks)	10 pts
+Rule of Five (copy, move, destruct)	20 pts
+Core functionality: push_back, pop_back, [], etc.	30 pts
+Operator overloading (==, !=, [])	10 pts
+Edge case handling (pop_back on empty, self-assignment, etc.)	10 pts
+Clean code, modular structure, comments	5 pts
+report.txt writeup and test cases	5 pts
+Total	100 pts
+
+
+⸻
+
+✅ Must-Have Checklist
+	•	Template class structure with T* data, sz, cap
+	•	Safe new / delete usage
+	•	Push and pop logic with resizing
+	•	Overloaded [], ==, !=
+	•	Move semantics (Vector(Vector&&) and operator=(Vector&&))
+	•	Copy safety (deep copy, no shallow pointer aliasing)
+	•	No memory leaks (use Valgrind or equivalent to check)
+	•	Compile cleanly with g++ -std=c++17
+	•	Robust main.cpp with edge test cases
+	•	Clear, readable report.txt
+
+⸻
+
+Let me know if you’d like the starter code scaffolding (Vector.h, Vector.cpp, main.cpp) — I can generate that next.

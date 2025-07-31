@@ -1,0 +1,4 @@
+/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles/vector_main.dir
+/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles/vector_class.dir
+/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles/edit_cache.dir
+/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles/rebuild_cache.dir
