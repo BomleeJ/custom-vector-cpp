@@ -38,7 +38,7 @@ OR
 ./build/bin/vector_tests
 ```
 
-About This Project
+## About This Project
 
 This class is essentially a subset of what a real std::vector provides. It implements the core mechanics for pushing, popping, reserving, and iterating, but omits advanced features like:
 	•	Custom allocators
@@ -60,7 +60,7 @@ In a simple benchmark pushing back one million `std::string` objects, this imple
 | std::vector     | 20        |
 | Python list     | 45        |
 
-This was unexpected. The primary reasons I believe this occurred:
+This was unexpected. The primary suspects for the performance I have come up with are:
 
 - **Simplicity**:  
   The implementation is minimal compared to std::vector; for instance it lacks an allocator object or type trait machinery.
