@@ -4,25 +4,15 @@
 #include <string>
 #include <vector>
 #include <chrono>
-#include <thread>
+#include <numeric> // accumulate
 
 struct Timer
 {
-    std::string message;
-    std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
-    std::chrono::duration<float> duration;
-    
-    Timer(std::string message): message { message }
-    {
-        start = std::chrono::high_resolution_clock::now();
-    }
-
-    ~Timer()
-    {
-        end = std::chrono::high_resolution_clock::now();
-        duration = end - start;
-        float ms = duration.count() * 1000.0f;
-        std::cout << message << ms << " ms" << '\n';
+    std::chrono::high_resolution_clock::time_point start;
+    Timer() { start = std::chrono::high_resolution_clock::now(); }
+    double elapsed_ms() const {
+        auto end = std::chrono::high_resolution_clock::now();
+        return std::chrono::duration<double, std::milli>(end - start).count();
     }
 };
 
@@ -30,60 +20,55 @@ class Benchmarks
 {
 private:
     std::string test_value;
+    static constexpr size_t N = 1'000'000;
+    static constexpr int trials = 5;
 
-    void std_lib_benchmark()
+    template <typename VecT>
+    double run_one(VecT& v)
     {
-        Timer T("std::vector implementation took ");
-        
-        std::vector<std::string> myVec;
-
-        for (size_t i = 0; i < 1000000; i++)
-        {
-            myVec.push_back(test_value);
+        v.clear();
+        v.reserve(N);
+        Timer t;
+        for (size_t i = 0; i < N; i++) {
+            v.push_back(test_value);
         }
-
-    }
-
-    void custom_lib_benchmark()
-    {
-        Timer T("custom vector implementation took ");
         
-        Vector<std::string> myVec;
-
-        for (size_t i = 0; i < 1000000; i++)
-        {
-            myVec.push_back(test_value);
-        }  
+        for (const auto& s : v) sink += s.size();
+        return t.elapsed_ms();
     }
-
 
 public:
+    Benchmarks(std::string value): test_value{ std::move(value) } {}
 
-Benchmarks(std::string value): 
-test_value { value }
-{ }
+    void runTests()
+    {
+        {
+            std::vector<std::string> myVec;
+            double total = 0;
+            for (int i = 0; i < trials; i++) {
+                total += run_one(myVec);
+            }
+            std::cout << "std::vector avg over " << trials << " trials: "
+                      << (total / trials) << " ms\n";
+        }
 
-
-
-void runTests()
-{
-    std_lib_benchmark();
-    custom_lib_benchmark();
-}
-
+        {
+            Vector<std::string> myVec;
+            double total = 0;
+            for (int i = 0; i < trials; i++) {
+                total += run_one(myVec);
+            }
+            std::cout << "custom Vector avg over " << trials << " trials: "
+                      << (total / trials) << " ms\n";
+        }
+    }
 };
-
-
 
 int main()
 {
     std::cout << "=====Executing Benchmark Test in C++=====\n";
     std::cout << "Pushing Back 1,000,000 Test strings\n";
-    
-    std::string test_value = "This is my test string";
 
-    Benchmarks Tests(test_value);
-
+    Benchmarks Tests("This is my test string");
     Tests.runTests();
-
 }
