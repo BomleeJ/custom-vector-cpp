@@ -321,30 +321,6 @@ tests/test_assignment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.s
 .PHONY : tests/test_assignment.cpp.s
 
-tests/test_comparison.o: tests/test_comparison.cpp.o
-.PHONY : tests/test_comparison.o
-
-# target to build an object file
-tests/test_comparison.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o
-.PHONY : tests/test_comparison.cpp.o
-
-tests/test_comparison.i: tests/test_comparison.cpp.i
-.PHONY : tests/test_comparison.i
-
-# target to preprocess a source file
-tests/test_comparison.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.i
-.PHONY : tests/test_comparison.cpp.i
-
-tests/test_comparison.s: tests/test_comparison.cpp.s
-.PHONY : tests/test_comparison.s
-
-# target to generate assembly for a file
-tests/test_comparison.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.s
-.PHONY : tests/test_comparison.cpp.s
-
 tests/test_construction.o: tests/test_construction.cpp.o
 .PHONY : tests/test_construction.o
 
@@ -369,53 +345,29 @@ tests/test_construction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_construction.cpp.s
 .PHONY : tests/test_construction.cpp.s
 
-tests/test_edge_cases.o: tests/test_edge_cases.cpp.o
-.PHONY : tests/test_edge_cases.o
+tests/test_iterators.o: tests/test_iterators.cpp.o
+.PHONY : tests/test_iterators.o
 
 # target to build an object file
-tests/test_edge_cases.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o
-.PHONY : tests/test_edge_cases.cpp.o
+tests/test_iterators.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o
+.PHONY : tests/test_iterators.cpp.o
 
-tests/test_edge_cases.i: tests/test_edge_cases.cpp.i
-.PHONY : tests/test_edge_cases.i
-
-# target to preprocess a source file
-tests/test_edge_cases.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.i
-.PHONY : tests/test_edge_cases.cpp.i
-
-tests/test_edge_cases.s: tests/test_edge_cases.cpp.s
-.PHONY : tests/test_edge_cases.s
-
-# target to generate assembly for a file
-tests/test_edge_cases.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.s
-.PHONY : tests/test_edge_cases.cpp.s
-
-tests/test_modifiers.o: tests/test_modifiers.cpp.o
-.PHONY : tests/test_modifiers.o
-
-# target to build an object file
-tests/test_modifiers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o
-.PHONY : tests/test_modifiers.cpp.o
-
-tests/test_modifiers.i: tests/test_modifiers.cpp.i
-.PHONY : tests/test_modifiers.i
+tests/test_iterators.i: tests/test_iterators.cpp.i
+.PHONY : tests/test_iterators.i
 
 # target to preprocess a source file
-tests/test_modifiers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.i
-.PHONY : tests/test_modifiers.cpp.i
+tests/test_iterators.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.i
+.PHONY : tests/test_iterators.cpp.i
 
-tests/test_modifiers.s: tests/test_modifiers.cpp.s
-.PHONY : tests/test_modifiers.s
+tests/test_iterators.s: tests/test_iterators.cpp.s
+.PHONY : tests/test_iterators.s
 
 # target to generate assembly for a file
-tests/test_modifiers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.s
-.PHONY : tests/test_modifiers.cpp.s
+tests/test_iterators.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.s
+.PHONY : tests/test_iterators.cpp.s
 
 tests/test_utilities.o: tests/test_utilities.cpp.o
 .PHONY : tests/test_utilities.o
@@ -469,18 +421,12 @@ help:
 	@echo "... tests/test_assignment.o"
 	@echo "... tests/test_assignment.i"
 	@echo "... tests/test_assignment.s"
-	@echo "... tests/test_comparison.o"
-	@echo "... tests/test_comparison.i"
-	@echo "... tests/test_comparison.s"
 	@echo "... tests/test_construction.o"
 	@echo "... tests/test_construction.i"
 	@echo "... tests/test_construction.s"
-	@echo "... tests/test_edge_cases.o"
-	@echo "... tests/test_edge_cases.i"
-	@echo "... tests/test_edge_cases.s"
-	@echo "... tests/test_modifiers.o"
-	@echo "... tests/test_modifiers.i"
-	@echo "... tests/test_modifiers.s"
+	@echo "... tests/test_iterators.o"
+	@echo "... tests/test_iterators.i"
+	@echo "... tests/test_iterators.s"
 	@echo "... tests/test_utilities.o"
 	@echo "... tests/test_utilities.i"
 	@echo "... tests/test_utilities.s"

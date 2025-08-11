@@ -100,24 +100,10 @@ CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp -o CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.s
 
-CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o: CMakeFiles/vector_tests.dir/flags.make
-CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_modifiers.cpp
-CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_modifiers.cpp
-
-CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omarjingoisemperor/Desktop/Vector/tests/test_modifiers.cpp > CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.i
-
-CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_modifiers.cpp -o CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.s
-
 CMakeFiles/vector_tests.dir/tests/test_access.cpp.o: CMakeFiles/vector_tests.dir/flags.make
 CMakeFiles/vector_tests.dir/tests/test_access.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_access.cpp
 CMakeFiles/vector_tests.dir/tests/test_access.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_access.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_access.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_access.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_access.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_access.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_access.cpp
 
 CMakeFiles/vector_tests.dir/tests/test_access.cpp.i: cmake_force
@@ -128,24 +114,10 @@ CMakeFiles/vector_tests.dir/tests/test_access.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_access.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_access.cpp -o CMakeFiles/vector_tests.dir/tests/test_access.cpp.s
 
-CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o: CMakeFiles/vector_tests.dir/flags.make
-CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_comparison.cpp
-CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_comparison.cpp
-
-CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omarjingoisemperor/Desktop/Vector/tests/test_comparison.cpp > CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.i
-
-CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_comparison.cpp -o CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.s
-
 CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o: CMakeFiles/vector_tests.dir/flags.make
 CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_utilities.cpp
 CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_utilities.cpp
 
 CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.i: cmake_force
@@ -156,45 +128,41 @@ CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_utilities.cpp -o CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.s
 
-CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o: CMakeFiles/vector_tests.dir/flags.make
-CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_edge_cases.cpp
-CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_edge_cases.cpp
+CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o: CMakeFiles/vector_tests.dir/flags.make
+CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o: /Users/omarjingoisemperor/Desktop/Vector/tests/test_iterators.cpp
+CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o: CMakeFiles/vector_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o -MF CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o.d -o CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o -c /Users/omarjingoisemperor/Desktop/Vector/tests/test_iterators.cpp
 
-CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omarjingoisemperor/Desktop/Vector/tests/test_edge_cases.cpp > CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.i
+CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/omarjingoisemperor/Desktop/Vector/tests/test_iterators.cpp > CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.i
 
-CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_edge_cases.cpp -o CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.s
+CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/omarjingoisemperor/Desktop/Vector/tests/test_iterators.cpp -o CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.s
 
 # Object files for target vector_tests
 vector_tests_OBJECTS = \
 "CMakeFiles/vector_tests.dir/tests/test_construction.cpp.o" \
 "CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o" \
-"CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o" \
 "CMakeFiles/vector_tests.dir/tests/test_access.cpp.o" \
-"CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o" \
 "CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o" \
-"CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o"
+"CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o"
 
 # External object files for target vector_tests
 vector_tests_EXTERNAL_OBJECTS =
 
 bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_construction.cpp.o
 bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o
-bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o
 bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_access.cpp.o
-bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o
 bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o
-bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o
+bin/vector_tests: CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o
 bin/vector_tests: CMakeFiles/vector_tests.dir/build.make
 bin/vector_tests: lib/libgtest_main.a
 bin/vector_tests: lib/libgtest.a
 bin/vector_tests: CMakeFiles/vector_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable bin/vector_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/vector_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vector_tests.dir/link.txt --verbose=$(VERBOSE)
 	/opt/homebrew/bin/cmake -D TEST_TARGET=vector_tests -D TEST_EXECUTABLE=/Users/omarjingoisemperor/Desktop/Vector/build/bin/vector_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/omarjingoisemperor/Desktop/Vector/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=vector_tests_TESTS -D CTEST_FILE=/Users/omarjingoisemperor/Desktop/Vector/build/vector_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /opt/homebrew/share/cmake/Modules/GoogleTestAddTests.cmake
 

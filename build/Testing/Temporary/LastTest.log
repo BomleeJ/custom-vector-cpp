@@ -1,19 +1,154 @@
-Start testing: Jul 31 18:39 EDT
+Start testing: Aug 11 03:37 EDT
 ----------------------------------------------------------
-Unable to find executable: vector_tests_NOT_BUILT
-1/1 Testing: vector_tests_NOT_BUILT
-1/1 Test: vector_tests_NOT_BUILT
-Command: ""
+4/29 Testing: Construction.CapacityConstructor_WorksWithZeroCapacity
+4/29 Test: Construction.CapacityConstructor_WorksWithZeroCapacity
+Command: "/Users/omarjingoisemperor/Desktop/Vector/build/bin/vector_tests" "--gtest_filter=Construction.CapacityConstructor_WorksWithZeroCapacity" "--gtest_also_run_disabled_tests"
 Directory: /Users/omarjingoisemperor/Desktop/Vector/build
-"vector_tests_NOT_BUILT" start time: 
+"Construction.CapacityConstructor_WorksWithZeroCapacity" start time: Aug 11 03:37 EDT
 Output:
 ----------------------------------------------------------
+Running main() from /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Construction.CapacityConstructor_WorksWithZeroCapacity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Construction
+[ RUN      ] Construction.CapacityConstructor_WorksWithZeroCapacity
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_construction.cpp:32: Failure
+Expected equality of these values:
+  vec.capacity()
+    Which is: 1
+  0
+[  FAILED  ] Construction.CapacityConstructor_WorksWithZeroCapacity (0 ms)
+[----------] 1 test from Construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Construction.CapacityConstructor_WorksWithZeroCapacity
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"Construction.CapacityConstructor_WorksWithZeroCapacity" end time: Aug 11 03:37 EDT
+"Construction.CapacityConstructor_WorksWithZeroCapacity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/29 Testing: Assignment.MoveAssignment_TransfersOwnership
+15/29 Test: Assignment.MoveAssignment_TransfersOwnership
+Command: "/Users/omarjingoisemperor/Desktop/Vector/build/bin/vector_tests" "--gtest_filter=Assignment.MoveAssignment_TransfersOwnership" "--gtest_also_run_disabled_tests"
+Directory: /Users/omarjingoisemperor/Desktop/Vector/build
+"Assignment.MoveAssignment_TransfersOwnership" start time: Aug 11 03:37 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Assignment.MoveAssignment_TransfersOwnership
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Assignment
+[ RUN      ] Assignment.MoveAssignment_TransfersOwnership
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp:58: Failure
+Expected equality of these values:
+  original.size()
+    Which is: 3
+  0
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp:60: Failure
+Value of: original.empty()
+  Actual: false
+Expected: true
+[  FAILED  ] Assignment.MoveAssignment_TransfersOwnership (0 ms)
+[----------] 1 test from Assignment (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Assignment.MoveAssignment_TransfersOwnership
+
+ 1 FAILED TEST
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Passed.
-"vector_tests_NOT_BUILT" end time: Jul 31 18:39 EDT
-"vector_tests_NOT_BUILT" time elapsed: 00:00:00
+Test Failed.
+"Assignment.MoveAssignment_TransfersOwnership" end time: Aug 11 03:37 EDT
+"Assignment.MoveAssignment_TransfersOwnership" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jul 31 18:39 EDT
+16/29 Testing: Assignment.MoveAssignment_WorksWithEmptyVector
+16/29 Test: Assignment.MoveAssignment_WorksWithEmptyVector
+Command: "/Users/omarjingoisemperor/Desktop/Vector/build/bin/vector_tests" "--gtest_filter=Assignment.MoveAssignment_WorksWithEmptyVector" "--gtest_also_run_disabled_tests"
+Directory: /Users/omarjingoisemperor/Desktop/Vector/build
+"Assignment.MoveAssignment_WorksWithEmptyVector" start time: Aug 11 03:37 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Assignment.MoveAssignment_WorksWithEmptyVector
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Assignment
+[ RUN      ] Assignment.MoveAssignment_WorksWithEmptyVector
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp:73: Failure
+Expected equality of these values:
+  original.size()
+    Which is: 3
+  0
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp:75: Failure
+Value of: original.empty()
+  Actual: false
+Expected: true
+[  FAILED  ] Assignment.MoveAssignment_WorksWithEmptyVector (0 ms)
+[----------] 1 test from Assignment (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Assignment.MoveAssignment_WorksWithEmptyVector
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"Assignment.MoveAssignment_WorksWithEmptyVector" end time: Aug 11 03:37 EDT
+"Assignment.MoveAssignment_WorksWithEmptyVector" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/29 Testing: Utilities.Clear
+27/29 Test: Utilities.Clear
+Command: "/Users/omarjingoisemperor/Desktop/Vector/build/bin/vector_tests" "--gtest_filter=Utilities.Clear" "--gtest_also_run_disabled_tests"
+Directory: /Users/omarjingoisemperor/Desktop/Vector/build
+"Utilities.Clear" start time: Aug 11 03:37 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Utilities.Clear
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Utilities
+[ RUN      ] Utilities.Clear
+/Users/omarjingoisemperor/Desktop/Vector/tests/test_utilities.cpp:33: Failure
+Value of: myVec.capacity() == 0
+  Actual: false
+Expected: true
+[  FAILED  ] Utilities.Clear (0 ms)
+[----------] 1 test from Utilities (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Utilities.Clear
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"Utilities.Clear" end time: Aug 11 03:37 EDT
+"Utilities.Clear" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 11 03:37 EDT

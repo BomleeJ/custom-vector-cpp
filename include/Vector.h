@@ -71,8 +71,8 @@ class Vector
                 iterator operator++(int) { iterator old(ptr); ptr++; return old; }
                 iterator operator--(int) { iterator old(ptr); ptr--; return old; }
 
-                bool operator==(const iterator& other) { return ptr == other.ptr; }
-                bool operator!=(const iterator& other) { return ptr != other.ptr; }
+                bool operator==(const iterator& other) const { return ptr == other.ptr; }
+                bool operator!=(const iterator& other) const { return ptr != other.ptr; }
         };
 
         class const_iterator {
@@ -93,8 +93,9 @@ class Vector
                 const_iterator operator++(int) { const_iterator old(ptr); ptr++; return old; }
                 const_iterator operator--(int) { const_iterator old(ptr); ptr--; return old; }
 
-                bool operator==(const const_iterator& other) { return ptr == other.ptr; }
-                bool operator!=(const const_iterator& other) { return ptr != other.ptr; }
+
+                bool operator==(const const_iterator& other) const { return ptr == other.ptr; }
+                bool operator!=(const const_iterator& other) const { return ptr != other.ptr; }
     };
 
     iterator begin();
@@ -367,22 +368,22 @@ void Vector<T>::reserve(size_t newCapacity)
 }
 
 template <typename T>
-Vector<T>::iterator Vector<T>::begin() { return iterator(data); }
+typename Vector<T>::iterator Vector<T>::begin() { return iterator(data); }
 
 template <typename T>
-Vector<T>::iterator Vector<T>::end() { return iterator(data + sz); }
+typename Vector<T>::iterator Vector<T>::end() { return iterator(data + sz); }
 
 /* Read only access of const Vector*/
 template <typename T>
-Vector<T>::const_iterator Vector<T>::begin() const { return const_iterator(data); }
+typename Vector<T>::const_iterator Vector<T>::begin() const { return const_iterator(data); }
 
 template <typename T>
-Vector<T>::const_iterator Vector<T>::end() const { return const_iterator(data + sz); }
+typename Vector<T>::const_iterator Vector<T>::end() const { return const_iterator(data + sz); }
 
 
 /* Read only access of non const and const Vector*/
 template <typename T>
-Vector<T>::const_iterator Vector<T>::cbegin() const { return begin(); }
+typename Vector<T>::const_iterator Vector<T>::cbegin() const { return begin(); }
 
 template <typename T>
-Vector<T>::const_iterator Vector<T>::cend() const { return end(); } 
+typename Vector<T>::const_iterator Vector<T>::cend() const { return end(); } 

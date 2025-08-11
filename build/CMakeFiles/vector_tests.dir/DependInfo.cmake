@@ -10,10 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/omarjingoisemperor/Desktop/Vector/tests/test_access.cpp" "CMakeFiles/vector_tests.dir/tests/test_access.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_access.cpp.o.d"
   "/Users/omarjingoisemperor/Desktop/Vector/tests/test_assignment.cpp" "CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o.d"
-  "/Users/omarjingoisemperor/Desktop/Vector/tests/test_comparison.cpp" "CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o.d"
   "/Users/omarjingoisemperor/Desktop/Vector/tests/test_construction.cpp" "CMakeFiles/vector_tests.dir/tests/test_construction.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_construction.cpp.o.d"
-  "/Users/omarjingoisemperor/Desktop/Vector/tests/test_edge_cases.cpp" "CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o.d"
-  "/Users/omarjingoisemperor/Desktop/Vector/tests/test_modifiers.cpp" "CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o.d"
+  "/Users/omarjingoisemperor/Desktop/Vector/tests/test_iterators.cpp" "CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_iterators.cpp.o.d"
   "/Users/omarjingoisemperor/Desktop/Vector/tests/test_utilities.cpp" "CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o" "gcc" "CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o.d"
   )
 

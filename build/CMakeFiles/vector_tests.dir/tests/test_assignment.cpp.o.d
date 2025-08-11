@@ -1030,4 +1030,4 @@ CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o: \
   /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
   /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
   /Users/omarjingoisemperor/Desktop/Vector/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
-  /Users/omarjingoisemperor/Desktop/Vector/tests/../include/Vector.h
+  /Users/omarjingoisemperor/Desktop/Vector/include/Vector.h

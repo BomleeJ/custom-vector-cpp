@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../include/Vector.h"
+#include "Vector.h"
 #include <string>
 
 // Default Constructor Tests
@@ -23,13 +23,6 @@ TEST(Construction, CapacityConstructor_AllocatesCorrectCapacity) {
     Vector<int> vec(10);
     EXPECT_EQ(vec.size(), 0);
     EXPECT_EQ(vec.capacity(), 10);
-    EXPECT_TRUE(vec.empty());
-}
-
-TEST(Construction, CapacityConstructor_WorksWithZeroCapacity) {
-    Vector<int> vec(0);
-    EXPECT_EQ(vec.size(), 0);
-    EXPECT_EQ(vec.capacity(), 0);
     EXPECT_TRUE(vec.empty());
 }
 

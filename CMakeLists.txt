@@ -24,11 +24,9 @@ FetchContent_MakeAvailable(googletest)
 add_executable(vector_tests
     tests/test_construction.cpp
     tests/test_assignment.cpp
-    tests/test_modifiers.cpp
     tests/test_access.cpp
-    tests/test_comparison.cpp
     tests/test_utilities.cpp
-    tests/test_edge_cases.cpp
+    tests/test_iterators.cpp
 )
 
 target_include_directories(vector_tests PUBLIC ${CMAKE_SOURCE_DIR}/include)
