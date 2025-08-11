@@ -60,7 +60,7 @@ In a simple benchmark pushing back one million `std::string` objects, this imple
 | std::vector     | 20        |
 | Python list     | 45        |
 
-This was unexpected. The primary suspects for the performance I have come up with are:
+This was unexpected. The primary suspects for the surprising performance metrics I have come up with are:
 
 - **Simplicity**:  
   The implementation is minimal compared to std::vector; for instance it lacks an allocator object or type trait machinery.
