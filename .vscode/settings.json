@@ -52,6 +52,12 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "iterator": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "forward_list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "__tree": "cpp"
     }
 }

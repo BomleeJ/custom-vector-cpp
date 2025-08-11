@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/omarjingoisemperor/Desktop/Vector/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -85,19 +95,57 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles /Users/omarjingoisemperor/Desktop/Vector/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles 0
 .PHONY : all
-
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles /Users/omarjingoisemperor/Desktop/Vector/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles 0
-.PHONY : codegen
 
 # The main clean target
 clean:
@@ -137,41 +185,69 @@ vector_main/fast:
 .PHONY : vector_main/fast
 
 #=============================================================================
-# Target rules for targets named vector_class
+# Target rules for targets named vector_tests
 
 # Build rule for target.
-vector_class: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vector_class
-.PHONY : vector_class
+vector_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vector_tests
+.PHONY : vector_tests
 
 # fast build rule for target.
-vector_class/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_class.dir/build.make CMakeFiles/vector_class.dir/build
-.PHONY : vector_class/fast
+vector_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/build
+.PHONY : vector_tests/fast
 
-src/Vector.o: src/Vector.cpp.o
-.PHONY : src/Vector.o
+#=============================================================================
+# Target rules for targets named gmock
 
-# target to build an object file
-src/Vector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_class.dir/build.make CMakeFiles/vector_class.dir/src/Vector.cpp.o
-.PHONY : src/Vector.cpp.o
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
-src/Vector.i: src/Vector.cpp.i
-.PHONY : src/Vector.i
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
-# target to preprocess a source file
-src/Vector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_class.dir/build.make CMakeFiles/vector_class.dir/src/Vector.cpp.i
-.PHONY : src/Vector.cpp.i
+#=============================================================================
+# Target rules for targets named gmock_main
 
-src/Vector.s: src/Vector.cpp.s
-.PHONY : src/Vector.s
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
-# target to generate assembly for a file
-src/Vector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_class.dir/build.make CMakeFiles/vector_class.dir/src/Vector.cpp.s
-.PHONY : src/Vector.cpp.s
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -197,23 +273,217 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_main.dir/build.make CMakeFiles/vector_main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+tests/test_access.o: tests/test_access.cpp.o
+.PHONY : tests/test_access.o
+
+# target to build an object file
+tests/test_access.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_access.cpp.o
+.PHONY : tests/test_access.cpp.o
+
+tests/test_access.i: tests/test_access.cpp.i
+.PHONY : tests/test_access.i
+
+# target to preprocess a source file
+tests/test_access.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_access.cpp.i
+.PHONY : tests/test_access.cpp.i
+
+tests/test_access.s: tests/test_access.cpp.s
+.PHONY : tests/test_access.s
+
+# target to generate assembly for a file
+tests/test_access.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_access.cpp.s
+.PHONY : tests/test_access.cpp.s
+
+tests/test_assignment.o: tests/test_assignment.cpp.o
+.PHONY : tests/test_assignment.o
+
+# target to build an object file
+tests/test_assignment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.o
+.PHONY : tests/test_assignment.cpp.o
+
+tests/test_assignment.i: tests/test_assignment.cpp.i
+.PHONY : tests/test_assignment.i
+
+# target to preprocess a source file
+tests/test_assignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.i
+.PHONY : tests/test_assignment.cpp.i
+
+tests/test_assignment.s: tests/test_assignment.cpp.s
+.PHONY : tests/test_assignment.s
+
+# target to generate assembly for a file
+tests/test_assignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_assignment.cpp.s
+.PHONY : tests/test_assignment.cpp.s
+
+tests/test_comparison.o: tests/test_comparison.cpp.o
+.PHONY : tests/test_comparison.o
+
+# target to build an object file
+tests/test_comparison.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.o
+.PHONY : tests/test_comparison.cpp.o
+
+tests/test_comparison.i: tests/test_comparison.cpp.i
+.PHONY : tests/test_comparison.i
+
+# target to preprocess a source file
+tests/test_comparison.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.i
+.PHONY : tests/test_comparison.cpp.i
+
+tests/test_comparison.s: tests/test_comparison.cpp.s
+.PHONY : tests/test_comparison.s
+
+# target to generate assembly for a file
+tests/test_comparison.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_comparison.cpp.s
+.PHONY : tests/test_comparison.cpp.s
+
+tests/test_construction.o: tests/test_construction.cpp.o
+.PHONY : tests/test_construction.o
+
+# target to build an object file
+tests/test_construction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_construction.cpp.o
+.PHONY : tests/test_construction.cpp.o
+
+tests/test_construction.i: tests/test_construction.cpp.i
+.PHONY : tests/test_construction.i
+
+# target to preprocess a source file
+tests/test_construction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_construction.cpp.i
+.PHONY : tests/test_construction.cpp.i
+
+tests/test_construction.s: tests/test_construction.cpp.s
+.PHONY : tests/test_construction.s
+
+# target to generate assembly for a file
+tests/test_construction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_construction.cpp.s
+.PHONY : tests/test_construction.cpp.s
+
+tests/test_edge_cases.o: tests/test_edge_cases.cpp.o
+.PHONY : tests/test_edge_cases.o
+
+# target to build an object file
+tests/test_edge_cases.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.o
+.PHONY : tests/test_edge_cases.cpp.o
+
+tests/test_edge_cases.i: tests/test_edge_cases.cpp.i
+.PHONY : tests/test_edge_cases.i
+
+# target to preprocess a source file
+tests/test_edge_cases.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.i
+.PHONY : tests/test_edge_cases.cpp.i
+
+tests/test_edge_cases.s: tests/test_edge_cases.cpp.s
+.PHONY : tests/test_edge_cases.s
+
+# target to generate assembly for a file
+tests/test_edge_cases.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_edge_cases.cpp.s
+.PHONY : tests/test_edge_cases.cpp.s
+
+tests/test_modifiers.o: tests/test_modifiers.cpp.o
+.PHONY : tests/test_modifiers.o
+
+# target to build an object file
+tests/test_modifiers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.o
+.PHONY : tests/test_modifiers.cpp.o
+
+tests/test_modifiers.i: tests/test_modifiers.cpp.i
+.PHONY : tests/test_modifiers.i
+
+# target to preprocess a source file
+tests/test_modifiers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.i
+.PHONY : tests/test_modifiers.cpp.i
+
+tests/test_modifiers.s: tests/test_modifiers.cpp.s
+.PHONY : tests/test_modifiers.s
+
+# target to generate assembly for a file
+tests/test_modifiers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_modifiers.cpp.s
+.PHONY : tests/test_modifiers.cpp.s
+
+tests/test_utilities.o: tests/test_utilities.cpp.o
+.PHONY : tests/test_utilities.o
+
+# target to build an object file
+tests/test_utilities.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.o
+.PHONY : tests/test_utilities.cpp.o
+
+tests/test_utilities.i: tests/test_utilities.cpp.i
+.PHONY : tests/test_utilities.i
+
+# target to preprocess a source file
+tests/test_utilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.i
+.PHONY : tests/test_utilities.cpp.i
+
+tests/test_utilities.s: tests/test_utilities.cpp.s
+.PHONY : tests/test_utilities.s
+
+# target to generate assembly for a file
+tests/test_utilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_tests.dir/build.make CMakeFiles/vector_tests.dir/tests/test_utilities.cpp.s
+.PHONY : tests/test_utilities.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... vector_class"
+	@echo "... test"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... vector_main"
-	@echo "... src/Vector.o"
-	@echo "... src/Vector.i"
-	@echo "... src/Vector.s"
+	@echo "... vector_tests"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... tests/test_access.o"
+	@echo "... tests/test_access.i"
+	@echo "... tests/test_access.s"
+	@echo "... tests/test_assignment.o"
+	@echo "... tests/test_assignment.i"
+	@echo "... tests/test_assignment.s"
+	@echo "... tests/test_comparison.o"
+	@echo "... tests/test_comparison.i"
+	@echo "... tests/test_comparison.s"
+	@echo "... tests/test_construction.o"
+	@echo "... tests/test_construction.i"
+	@echo "... tests/test_construction.s"
+	@echo "... tests/test_edge_cases.o"
+	@echo "... tests/test_edge_cases.i"
+	@echo "... tests/test_edge_cases.s"
+	@echo "... tests/test_modifiers.o"
+	@echo "... tests/test_modifiers.i"
+	@echo "... tests/test_modifiers.s"
+	@echo "... tests/test_utilities.o"
+	@echo "... tests/test_utilities.i"
+	@echo "... tests/test_utilities.s"
 .PHONY : help
 
 

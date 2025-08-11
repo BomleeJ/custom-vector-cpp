@@ -1,0 +1,4 @@
+VectorTest.DefaultConstructor 2 0.00674696
+vector_tests_NOT_BUILT 0 0
+---
+vector_tests_NOT_BUILT

@@ -95,7 +95,6 @@ vector_main_EXTERNAL_OBJECTS =
 
 bin/vector_main: CMakeFiles/vector_main.dir/src/main.cpp.o
 bin/vector_main: CMakeFiles/vector_main.dir/build.make
-bin/vector_main: libvector_class.a
 bin/vector_main: CMakeFiles/vector_main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/omarjingoisemperor/Desktop/Vector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/vector_main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vector_main.dir/link.txt --verbose=$(VERBOSE)
