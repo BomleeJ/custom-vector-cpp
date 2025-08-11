@@ -20,22 +20,23 @@ cmake --build build
 2. Run Benchmarks
 
 C++ benchmark:
-
+```bash
 ./build/bin/vector_main
-
+```
 Python benchmark:
-
+```bash
 cd build
 make python_benchmark
-
+```
 3. Run Tests
-
+```bash
 cd build
 ctest
-
+```
 OR
-
+```bash
 ./build/bin/vector_tests
+```
 
 About This Project
 
@@ -49,7 +50,7 @@ The goal was education, not to outdo the standard library.
 
 ## Benchmark Observation
 
-In a simple benchmark pushing back one million `std::string` objects, this implementation ran **almost twice as fast** as `std::vector` when compiled with `g++` under the tested conditions.
+In a simple benchmark pushing back one million `std::string` objects, this implementation ran **5-6x as fast** as `std::vector` when compiled with `g++` under the tested conditions.
 
 **Average Implementation Speeds**
 
@@ -62,8 +63,7 @@ In a simple benchmark pushing back one million `std::string` objects, this imple
 This was unexpected. The primary reasons I believe this occurred:
 
 - **Simplicity**:  
-  The implementation is minimal and lacks an allocator object or type trait machinery.
+  The implementation is minimal compared to std::vector; for instance it lacks an allocator object or type trait machinery.
 - **Fewer safety checks**:  
   The standard library adds layers for type safety. Both push_back and emplace_back have strong expection guarantees, which can cost performance in microbenchmarks.
   source: https://en.cppreference.com/w/cpp/container/vector.html
-
