@@ -1,5 +1,0 @@
-if(EXISTS "/Users/omarjingoisemperor/Desktop/Vector/build/vector_tests[1]_tests.cmake")
-  include("/Users/omarjingoisemperor/Desktop/Vector/build/vector_tests[1]_tests.cmake")
-else()
-  add_test(vector_tests_NOT_BUILT vector_tests_NOT_BUILT)
-endif()

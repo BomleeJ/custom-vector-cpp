@@ -32,5 +32,10 @@ add_executable(vector_tests
 target_include_directories(vector_tests PUBLIC ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(vector_tests PRIVATE gtest_main)
 
+add_custom_target(python_benchmark 
+COMMAND python3 src/test.py
+WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
 include(GoogleTest)
 gtest_discover_tests(vector_tests)

@@ -4,7 +4,7 @@
 
 TEST(Utilities, Reserve)
 {
-    Vector<int> myVec;
+    VectorLite<int> myVec;
     size_t spaces = 100;
     myVec.reserve(spaces);
     EXPECT_EQ(myVec.capacity(), spaces);
@@ -13,8 +13,8 @@ TEST(Utilities, Reserve)
 TEST(Utilities, Comparisons)
 {
     
-    Vector<int> VecA({1, 2, 3, 4, 5});
-    Vector<int> VecB({1, 2, 3, 4, 5});
+    VectorLite<int> VecA({1, 2, 3, 4, 5});
+    VectorLite<int> VecB({1, 2, 3, 4, 5});
 
     EXPECT_TRUE(VecA == VecB);
     EXPECT_FALSE(VecA != VecB);
@@ -25,7 +25,7 @@ TEST(Utilities, Comparisons)
 
 TEST(Utilities, Clear)
 {
-    Vector<int> myVec;
+    VectorLite<int> myVec;
     myVec.push_back(10);
     EXPECT_TRUE(myVec.size() == 1);
     myVec.clear();
@@ -35,13 +35,13 @@ TEST(Utilities, Clear)
 
 TEST(Utilities, EmptyWhenInitialized)
 {
-    Vector<int> myVec;
+    VectorLite<int> myVec;
     EXPECT_TRUE(myVec.empty() == 1);
 }
 
 TEST(Utilities, EmptyAfterClear)
 {
-    Vector<int> myVec({1, 2, 3, 4, 5});
+    VectorLite<int> myVec({1, 2, 3, 4, 5});
     myVec.clear();
     EXPECT_TRUE(myVec.empty() == 1);
 }

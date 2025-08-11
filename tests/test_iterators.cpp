@@ -4,7 +4,7 @@
 
 TEST(Iterators, BasicIteration)
 {
-    Vector<int> myVec({0, 1, 2, 3, 4});
+    VectorLite<int> myVec({0, 1, 2, 3, 4});
     
     int expected = 0;
     for (auto it = myVec.begin(); it != myVec.end(); ++it) {
@@ -21,7 +21,7 @@ TEST(Iterators, BasicIteration)
 
 TEST(Iterators, IncrementDecrement)
 {
-    Vector<int> myVec({10, 20, 30, 40, 50});
+    VectorLite<int> myVec({10, 20, 30, 40, 50});
     auto it = myVec.begin();
     
     EXPECT_EQ(*it, 10);
@@ -35,7 +35,7 @@ TEST(Iterators, IncrementDecrement)
 
 TEST(Iterators, Comparisons)
 {
-    Vector<int> myVec({1, 2, 3, 4, 5});
+    VectorLite<int> myVec({1, 2, 3, 4, 5});
     auto it1 = myVec.begin();
     auto it2 = myVec.begin();
     auto it3 = myVec.begin();
@@ -50,7 +50,7 @@ TEST(Iterators, Comparisons)
 
 TEST(Iterators, STLAlgorithms)
 {
-    Vector<int> myVec({5, 2, 8, 1, 9, 3});
+    VectorLite<int> myVec({5, 2, 8, 1, 9, 3});
     
     auto found = std::find(myVec.begin(), myVec.end(), 8);
     EXPECT_NE(found, myVec.end());
@@ -70,21 +70,21 @@ TEST(Iterators, STLAlgorithms)
 
 TEST(Iterators, EdgeCases)
 {
-    Vector<int> empty;
+    VectorLite<int> empty;
     EXPECT_EQ(empty.begin(), empty.end());
     
-    Vector<int> single({42});
+    VectorLite<int> single({42});
     EXPECT_NE(single.begin(), single.end());
     EXPECT_EQ(*single.begin(), 42);
     
-    const Vector<int> const_vec({1, 2, 3});
+    const VectorLite<int> const_vec({1, 2, 3});
     int expected = 1;
     for (auto it = const_vec.begin(); it != const_vec.end(); ++it) {
         EXPECT_EQ(*it, expected);
         expected++;
     }
     
-    Vector<int> myVec({1, 2, 3});
+    VectorLite<int> myVec({1, 2, 3});
     expected = 1;
     for (auto it = myVec.cbegin(); it != myVec.cend(); ++it) {
         EXPECT_EQ(*it, expected);

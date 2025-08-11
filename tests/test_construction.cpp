@@ -3,16 +3,16 @@
 #include <string>
 
 // Default Constructor Tests
-TEST(Construction, DefaultConstructor_CreatesEmptyVector) {
-    Vector<int> vec;
+TEST(Construction, DefaultConstructor_CreatesEmptyVectorLite) {
+    VectorLite<int> vec;
     EXPECT_EQ(vec.size(), 0);
     EXPECT_EQ(vec.capacity(), 4);
     EXPECT_TRUE(vec.empty());
 }
 
 TEST(Construction, DefaultConstructor_WorksWithDifferentTypes) {
-    Vector<double> vec1;
-    Vector<std::string> vec2;
+    VectorLite<double> vec1;
+    VectorLite<std::string> vec2;
     
     EXPECT_EQ(vec1.size(), 0);
     EXPECT_EQ(vec2.size(), 0);
@@ -20,7 +20,7 @@ TEST(Construction, DefaultConstructor_WorksWithDifferentTypes) {
 
 // Capacity Constructor Tests
 TEST(Construction, CapacityConstructor_AllocatesCorrectCapacity) {
-    Vector<int> vec(10);
+    VectorLite<int> vec(10);
     EXPECT_EQ(vec.size(), 0);
     EXPECT_EQ(vec.capacity(), 10);
     EXPECT_TRUE(vec.empty());
@@ -28,7 +28,7 @@ TEST(Construction, CapacityConstructor_AllocatesCorrectCapacity) {
 
 // Initializer List Constructor Tests
 TEST(Construction, InitializerListConstructor_CopiesElementsCorrectly) {
-    Vector<int> vec({1, 2, 3, 4, 5});
+    VectorLite<int> vec({1, 2, 3, 4, 5});
     EXPECT_EQ(vec.size(), 5);
     EXPECT_EQ(vec[0], 1);
     EXPECT_EQ(vec[1], 2);
@@ -39,13 +39,13 @@ TEST(Construction, InitializerListConstructor_CopiesElementsCorrectly) {
 }
 
 TEST(Construction, InitializerListConstructor_WorksWithEmptyList) {
-    Vector<int> vec({});
+    VectorLite<int> vec({});
     EXPECT_EQ(vec.size(), 0);
     EXPECT_TRUE(vec.empty());
 }
 
 TEST(Construction, InitializerListConstructor_WorksWithStrings) {
-    Vector<std::string> vec({"hello", "world", "test"});
+    VectorLite<std::string> vec({"hello", "world", "test"});
     EXPECT_EQ(vec.size(), 3);
     EXPECT_EQ(vec[0], "hello");
     EXPECT_EQ(vec[1], "world");
@@ -54,8 +54,8 @@ TEST(Construction, InitializerListConstructor_WorksWithStrings) {
 
 // Copy Constructor Tests
 TEST(Construction, CopyConstructor_CreatesDeepCopy) {
-    Vector<int> original({1, 2, 3, 4});
-    Vector<int> copy(original);
+    VectorLite<int> original({1, 2, 3, 4});
+    VectorLite<int> copy(original);
     
     EXPECT_EQ(original.size(), copy.size());
     EXPECT_EQ(original.capacity(), copy.capacity());
@@ -69,9 +69,9 @@ TEST(Construction, CopyConstructor_CreatesDeepCopy) {
     EXPECT_EQ(copy[0], 1);
 }
 
-TEST(Construction, CopyConstructor_WorksWithEmptyVector) {
-    Vector<int> original;
-    Vector<int> copy(original);
+TEST(Construction, CopyConstructor_WorksWithEmptyVectorLite) {
+    VectorLite<int> original;
+    VectorLite<int> copy(original);
     
     EXPECT_EQ(copy.size(), 0);
     EXPECT_EQ(copy.capacity(), 4);
@@ -80,8 +80,8 @@ TEST(Construction, CopyConstructor_WorksWithEmptyVector) {
 
 // Move Constructor Tests
 TEST(Construction, MoveConstructor_TakesOwnershipAndInvalidatesSource) {
-    Vector<int> original({1, 2, 3, 4, 5});
-    Vector<int> moved(std::move(original));
+    VectorLite<int> original({1, 2, 3, 4, 5});
+    VectorLite<int> moved(std::move(original));
     
     EXPECT_EQ(moved.size(), 5);
     for (int i = 0; i < 5; ++i) {
@@ -93,9 +93,9 @@ TEST(Construction, MoveConstructor_TakesOwnershipAndInvalidatesSource) {
     EXPECT_TRUE(original.empty());
 }
 
-TEST(Construction, MoveConstructor_WorksWithEmptyVector) {
-    Vector<int> original;
-    Vector<int> moved(std::move(original));
+TEST(Construction, MoveConstructor_WorksWithEmptyVectorLite) {
+    VectorLite<int> original;
+    VectorLite<int> moved(std::move(original));
     
     EXPECT_EQ(moved.size(), 0);
     EXPECT_EQ(moved.capacity(), 4);

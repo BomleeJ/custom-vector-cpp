@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 TEST(Access, BracketOperator_ReadWriteAccessCorrect) {
-    Vector<int> vec({1, 2, 3, 4, 5});
+    VectorLite<int> vec({1, 2, 3, 4, 5});
     
     EXPECT_EQ(vec[0], 1);
     EXPECT_EQ(vec[1], 2);
@@ -23,7 +23,7 @@ TEST(Access, BracketOperator_ReadWriteAccessCorrect) {
 }
 
 TEST(Access, BracketOperator_ConstCorrectness) {
-    const Vector<int> vec({1, 2, 3, 4, 5});
+    const VectorLite<int> vec({1, 2, 3, 4, 5});
     
     EXPECT_EQ(vec[0], 1);
     EXPECT_EQ(vec[1], 2);
@@ -34,7 +34,7 @@ TEST(Access, BracketOperator_ConstCorrectness) {
 }
 
 TEST(Access, AtOperator_ReturnsCorrectElement) {
-    Vector<int> vec({1, 2, 3, 4, 5});
+    VectorLite<int> vec({1, 2, 3, 4, 5});
     
     EXPECT_EQ(vec.at(0), 1);
     EXPECT_EQ(vec.at(1), 2);
@@ -45,14 +45,14 @@ TEST(Access, AtOperator_ReturnsCorrectElement) {
 
 
 TEST(Access, AtOperator_ThrowsOnOutOfBounds) {
-    Vector<int> vec({1, 2, 3, 4, 5});
+    VectorLite<int> vec({1, 2, 3, 4, 5});
     
     EXPECT_THROW(vec.at(5), std::out_of_range);
     EXPECT_THROW(vec.at(10), std::out_of_range);
 }
 
 TEST(Access, BracketVsAt_ConsistentBehavior) {
-    Vector<int> vec({1, 2, 3, 4, 5});
+    VectorLite<int> vec({1, 2, 3, 4, 5});
     
     for (size_t i = 0; i < vec.size(); ++i) {
         EXPECT_EQ(vec[i], vec.at(i));

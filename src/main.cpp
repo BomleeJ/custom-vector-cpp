@@ -33,7 +33,19 @@ private:
             v.push_back(test_value);
         }
         
-        for (const auto& s : v) sink += s.size();
+        return t.elapsed_ms();
+    }
+
+    template <typename VecT>
+    double run_emplace(VecT& v)
+    {
+        v.clear();
+        v.reserve(N);
+        Timer t;
+        for (size_t i = 0; i < N; i++) {
+            v.emplace_back(test_value);
+        }
+        
         return t.elapsed_ms();
     }
 
@@ -48,18 +60,30 @@ public:
             for (int i = 0; i < trials; i++) {
                 total += run_one(myVec);
             }
-            std::cout << "std::vector avg over " << trials << " trials: "
+            std::cout << "std::vector (push back) avg over " << trials << " trials: "
                       << (total / trials) << " ms\n";
         }
 
         {
-            Vector<std::string> myVec;
+            VectorLite<std::string> myVec;
             double total = 0;
             for (int i = 0; i < trials; i++) {
                 total += run_one(myVec);
             }
             std::cout << "custom Vector avg over " << trials << " trials: "
                       << (total / trials) << " ms\n";
+        }
+
+        {
+            {
+                std::vector<std::string> myVec;
+                double total = 0;
+                for (int i = 0; i < trials; i++) {
+                    total += run_one(myVec);
+                }
+                std::cout << "std::vector (emplace_back) avg over " << trials << " trials: "
+                          << (total / trials) << " ms\n";
+            }
         }
     }
 };

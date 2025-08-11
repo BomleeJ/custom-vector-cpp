@@ -4,21 +4,21 @@
 #include <initializer_list>
 
 template <typename T>
-class Vector
+class VectorLite
 {
     public:
-        Vector();
-        Vector(size_t initialCapacity);
-        Vector(std::initializer_list<T> list); 
+        VectorLite();
+        VectorLite(size_t initialCapacity);
+        VectorLite(std::initializer_list<T> list); 
 
         /* RULE OF FIVE */
-        ~Vector();
+        ~VectorLite();
 
-        Vector(const Vector<T>& other); //Copy Constructor
-        Vector(Vector<T>&& other) noexcept; //Move constructor
+        VectorLite(const VectorLite<T>& other); //Copy Constructor
+        VectorLite(VectorLite<T>&& other) noexcept; //Move constructor
 
-        Vector<T>& operator=(const Vector<T>& rhs); //Copy assign
-        Vector<T>& operator=(Vector<T>&& rhs) ; //Move assign
+        VectorLite<T>& operator=(const VectorLite<T>& rhs); //Copy assign
+        VectorLite<T>& operator=(VectorLite<T>&& rhs) ; //Move assign
 
         void push_back(const T& lvalue); 
         void push_back(T&& rvalue); 
@@ -41,12 +41,12 @@ class Vector
 
         void clear();
 
-        bool operator==(const Vector<T>& rhs) const;
-        bool operator!=(const Vector<T>& rhs) const;
+        bool operator==(const VectorLite<T>& rhs) const;
+        bool operator!=(const VectorLite<T>& rhs) const;
 
         void print();
 
-        friend void swap(Vector<T>& vec1, Vector<T>& vec2) noexcept
+        friend void swap(VectorLite<T>& vec1, VectorLite<T>& vec2) noexcept
         {
             vec1.swap(vec2);
         }
@@ -114,34 +114,34 @@ class Vector
         size_t cap;
         
         void destroy();
-        void copyFrom(const Vector<T>& other);
+        void copyFrom(const VectorLite<T>& other);
         void double_capacity();
-        void swap(Vector<T>& other) noexcept;
+        void swap(VectorLite<T>& other) noexcept;
 };
 
 // ============================== Definitions ==============================
 
 template <typename T>
-Vector<T>::Vector(): 
+VectorLite<T>::VectorLite(): 
     sz { 0 }, 
     cap { default_capacity }, 
     data { new T[default_capacity] }
 { }
 
 template <typename T>
-Vector<T>::Vector(size_t initialCapacity): 
+VectorLite<T>::VectorLite(size_t initialCapacity): 
     sz { 0 }, 
     cap { initialCapacity ? initialCapacity : 1 }, 
     data { new T[initialCapacity] }
 { }
 
 template <typename T>
-Vector<T>::Vector(std::initializer_list<T> initList):
+VectorLite<T>::VectorLite(std::initializer_list<T> initList):
 sz { 0 },
 cap { 0 },
 data { nullptr }
 {
-    Vector tmp;
+    VectorLite tmp;
     tmp.reserve(initList.size());
     for (const T& val : initList)
     {
@@ -151,12 +151,12 @@ data { nullptr }
 }
 
 template <typename T>
-Vector<T>::Vector(const Vector<T>& other):
+VectorLite<T>::VectorLite(const VectorLite<T>& other):
 sz { 0 }, 
 cap { 0 },
 data { nullptr } 
 {
-    Vector tmp;
+    VectorLite tmp;
     tmp.reserve(other.size());
     for (const T& val : other)
     {
@@ -166,23 +166,23 @@ data { nullptr }
 }
 
 template <typename T>
-Vector<T>& Vector<T>::operator=(const Vector& rhs)
+VectorLite<T>& VectorLite<T>::operator=(const VectorLite& rhs)
 {
-    Vector<T> temp = rhs;
+    VectorLite<T> temp = rhs;
     swap(temp);
 
     return *this;
 }
 
 template <typename T>
-Vector<T>& Vector<T>::operator=(Vector&& toMove) 
+VectorLite<T>& VectorLite<T>::operator=(VectorLite&& toMove) 
 { 
     swap(toMove);
     return *this;
 }
 
 template <typename T>
-Vector<T>::Vector(Vector<T>&& other) noexcept:
+VectorLite<T>::VectorLite(VectorLite<T>&& other) noexcept:
 sz { other.sz }, 
 cap { other.cap },
 data { other.data } 
@@ -193,13 +193,13 @@ data { other.data }
 }
 
 template <typename T>
-Vector<T>::~Vector()
+VectorLite<T>::~VectorLite()
 {
     destroy();
 }
 
 template <typename T>
-void Vector<T>::push_back(const T& lvalue)
+void VectorLite<T>::push_back(const T& lvalue)
 {
     if (sz == cap)
         double_capacity();
@@ -207,7 +207,7 @@ void Vector<T>::push_back(const T& lvalue)
 }
 
 template <typename T>
-void Vector<T>::push_back(T&& rvalue)
+void VectorLite<T>::push_back(T&& rvalue)
 {
     if (sz == cap)
         double_capacity();
@@ -215,13 +215,13 @@ void Vector<T>::push_back(T&& rvalue)
 }
 
 template <typename T>
-void Vector<T>::pop_back()
+void VectorLite<T>::pop_back()
 {
     sz--;
 }
 
 template <typename T>
-void Vector<T>::pop()
+void VectorLite<T>::pop()
 {
     if(sz == 0)
         throw std::out_of_range("Attempt to pop an empty array");
@@ -231,7 +231,7 @@ void Vector<T>::pop()
 
 
 template <typename T>
-T& Vector<T>::at(size_t index)
+T& VectorLite<T>::at(size_t index)
 {
     if (index >= sz)
         throw std::out_of_range("Index out of bounds");
@@ -239,7 +239,7 @@ T& Vector<T>::at(size_t index)
 }
 
 template <typename T>
-const T& Vector<T>::at(size_t index) const
+const T& VectorLite<T>::at(size_t index) const
 {
     if (index >= sz)
         throw std::out_of_range("Index out of bounds");
@@ -247,19 +247,19 @@ const T& Vector<T>::at(size_t index) const
 }
 
 template <typename T>
-T& Vector<T>::operator[](size_t index)
+T& VectorLite<T>::operator[](size_t index)
 {
     return data[index];
 }
 
 template <typename T>
-const T& Vector<T>::operator[](size_t index) const
+const T& VectorLite<T>::operator[](size_t index) const
 {
     return data[index];
 }
 
 template <typename T>
-void Vector<T>::destroy()
+void VectorLite<T>::destroy()
 {
     delete[] data;
     sz = 0;
@@ -268,38 +268,38 @@ void Vector<T>::destroy()
 }
 
 template <typename T>
-size_t Vector<T>::capacity() const
+size_t VectorLite<T>::capacity() const
 {
     return cap;
 }
 
 template <typename T>
-size_t Vector<T>::size() const
+size_t VectorLite<T>::size() const
 {
     return sz;
 }
 
 template <typename T>
-bool Vector<T>::empty() const
+bool VectorLite<T>::empty() const
 {
     return sz == static_cast<size_t>(0);
 }
 
 template <typename T>
-void Vector<T>::double_capacity()
+void VectorLite<T>::double_capacity()
 {
-    Vector<T> newVector(cap * 2); 
+    VectorLite<T> newVectorLite(cap * 2); 
     for (size_t idx = 0; idx < sz; idx++)
     {
-        newVector.data[idx] = std::move_if_noexcept(data[idx]);
+        newVectorLite.data[idx] = std::move_if_noexcept(data[idx]);
     }
-    newVector.sz = sz;
-    swap(newVector);
+    newVectorLite.sz = sz;
+    swap(newVectorLite);
     
 }
 
 template <typename T>
-void Vector<T>::swap(Vector<T>& other) noexcept
+void VectorLite<T>::swap(VectorLite<T>& other) noexcept
 {
     using std::swap; 
     swap(cap, other.cap);
@@ -308,7 +308,7 @@ void Vector<T>::swap(Vector<T>& other) noexcept
 }
 
 template <typename T>
-bool Vector<T>::operator==(const Vector<T>& rhs) const
+bool VectorLite<T>::operator==(const VectorLite<T>& rhs) const
 {
     if (sz != rhs.sz)
         return false;
@@ -324,13 +324,13 @@ bool Vector<T>::operator==(const Vector<T>& rhs) const
 }
 
 template <typename T>
-bool Vector<T>::operator!=(const Vector<T>& rhs) const
+bool VectorLite<T>::operator!=(const VectorLite<T>& rhs) const
 {
     return !(*this == rhs);
 }
 
 template <typename T>
-void Vector<T>::print()
+void VectorLite<T>::print()
 {
     std::cout << "[";
     if (!empty())
@@ -345,18 +345,18 @@ void Vector<T>::print()
 }
 
 template <typename T>
-void Vector<T>::clear()
+void VectorLite<T>::clear()
 {
     destroy();
 }
 
 template <typename T>
-void Vector<T>::reserve(size_t newCapacity)
+void VectorLite<T>::reserve(size_t newCapacity)
 {
     if (cap >= newCapacity)
         return;
 
-    Vector<T> newVec(newCapacity);
+    VectorLite<T> newVec(newCapacity);
 
     for (size_t idx = 0; idx < sz; idx++)
     {
@@ -368,22 +368,22 @@ void Vector<T>::reserve(size_t newCapacity)
 }
 
 template <typename T>
-typename Vector<T>::iterator Vector<T>::begin() { return iterator(data); }
+typename VectorLite<T>::iterator VectorLite<T>::begin() { return iterator(data); }
 
 template <typename T>
-typename Vector<T>::iterator Vector<T>::end() { return iterator(data + sz); }
+typename VectorLite<T>::iterator VectorLite<T>::end() { return iterator(data + sz); }
 
-/* Read only access of const Vector*/
+/* Read only access of const VectorLite*/
 template <typename T>
-typename Vector<T>::const_iterator Vector<T>::begin() const { return const_iterator(data); }
-
-template <typename T>
-typename Vector<T>::const_iterator Vector<T>::end() const { return const_iterator(data + sz); }
-
-
-/* Read only access of non const and const Vector*/
-template <typename T>
-typename Vector<T>::const_iterator Vector<T>::cbegin() const { return begin(); }
+typename VectorLite<T>::const_iterator VectorLite<T>::begin() const { return const_iterator(data); }
 
 template <typename T>
-typename Vector<T>::const_iterator Vector<T>::cend() const { return end(); } 
+typename VectorLite<T>::const_iterator VectorLite<T>::end() const { return const_iterator(data + sz); }
+
+
+/* Read only access of non const and const VectorLite*/
+template <typename T>
+typename VectorLite<T>::const_iterator VectorLite<T>::cbegin() const { return begin(); }
+
+template <typename T>
+typename VectorLite<T>::const_iterator VectorLite<T>::cend() const { return end(); } 
